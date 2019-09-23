@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Context根节点
+    factory:工厂属性，基于工厂去构建数据源对象
+    auth:验证  auth="Container":资源交给tomcat容器进行管理
+    给druid数据源设置属性
+        filter="stat" :启动监听
+-->
+<Context>
+    <Resource
+        name="jdbc/test1"
+        type="javax.sql.DataSource"
+        auth="Container"
+        factory="com.alibaba.druid.pool.DruidDataSourceFactory"
+        driverClassName="com.mysql.jdbc.Driver"
+        username="root"
+        password="root"
+        url="jdbc:mysql://localhost:3306/test1"
+        filter="stat"
+    />
+</Context>
